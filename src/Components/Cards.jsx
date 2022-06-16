@@ -1,34 +1,48 @@
-import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import DetailCountry from "../Views/DetailCountry"
 
-const Cards = () => {
-  const [countries, setCountries] = useState([])
-
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        setCountries(data)
-      })
-  }, [])
-
-  console.log(countries)
+const Cards = ({ countries }) => {
   return (
-    {countries.map(country => (
-    <div className="cards">
-      <div className="card">
-        <div className="flag">
-          <img src={country.flag.svg} alt="flag" srcSet="" width="150px" height="100px" />
-        </div>
+    <div className="cardsWrapper">
+      {countries.map((country) => (
+        <div className="cards" key={country.flags.svg}>
+          <Link
+            className="card"
+            to={"/detail"}
+            component={<DetailCountry />}
+            state={country}
+          >
+            <div className="flag">
+              <img
+                src={country.flags.svg}
+                alt="flag"
+                srcSet=""
+                width="150px"
+                height="100px"
+              />
+            </div>
 
-        <div className="data">
-          <h3>{country.name.common}</h3>
+            <div className="generalData">
+              <div className="name">{country.name.common}</div>
+              <div className="details">
+                <p>
+                  Population:
+                  {country.population.toLocaleString()}
+                </p>
+                <p>
+                  Region:
+                  {country.region}
+                </p>
+                <p>
+                  Capital:
+                  {country.capital}
+                </p>
+              </div>
+            </div>
+          </Link>
         </div>
-      </div>
+      ))}
     </div>
-  ))}
-
   )
 }
 

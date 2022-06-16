@@ -10,11 +10,15 @@ const Bar = () => {
           </div>
 
           <div className="bar-button">
-            <button>Dark Mode</button>
+            <button>
+              <span>
+                <i className="fa-regular fa-moon"></i>
+              </span>
+              Dark Mode
+            </button>
           </div>
         </div>
       </nav>
-      <hr />
     </>
   )
 }

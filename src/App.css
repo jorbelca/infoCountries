@@ -1,17 +1,32 @@
 :root {
   --white-background: hsl(0, 0%, 98%);
   --white-details: hsl(0, 0%, 100%)
-}
+  }
 
+  input::placeholder  {    
+      font-style: normal;
+      font-size: 11px;
+      font-weight: 100;
+      color: grey;
+  }
+a {
+   text-decoration: none; 
+   color: black;
+  }
 .App {
-  margin: 10px;
+
   background-color: var(--white-background)
-}
+  }
 
 .bar{
   display: flex;
-  background-color:  var( --white-details);
-  padding:20px
+  background-color: var( --white-details);
+  padding:20px;
+  box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.bar .title{
+font-weight: 600;
 }
 .bar-button{
   margin-left: auto;
@@ -19,9 +34,13 @@
 }
 .bar-button button{
   border: 0px;
-  
+  font-weight: 100;
   background-color:  var( --white-details);
   border-radius:5px;
+}
+.bar-button button i{
+  padding-right: 5px;
+  font-weight: 100;
 }
 .filter{
   margin:20px;
@@ -31,14 +50,114 @@
   padding:10px;
   border-radius:5px;
   border:1px;
-  width:300px
+  width:300px;
+  box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
 }
 .filter-select {
 margin-left: auto;
+box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
 }
 .filter-select select{
   padding:10px;
   border-radius:5px;
   border:1px;
   width:150px
+}
+.cardsWrapper{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3px;
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+}
+.card{
+  background-color: var(--white-details);
+  max-width:150px;
+  margin: 30px;  
+  box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
+}
+.card .generalData{
+  font-size: 10px;
+  margin: 10px;
+  padding-bottom: 30px;
+}
+.card .generalData .name{
+  font-weight: 600;
+  padding-bottom: 5px;
+ }
+
+.card .generalData .details p{
+  font-size: 9px;
+  margin:  5px 0 ; 
+}
+
+.detail{
+  background-color:  var( --white-details);
+  margin: 50px ;
+  display: flex;
+  }
+.detail .detailData{
+  margin: 10px 30px 10px 30px;
+  margin-right: 0;
+
+ }
+.detail .detailData .name{
+  font-weight: 600;
+  font-size: 18px;
+}
+.detail .detailData .details{
+  font-weight: 200;
+  font-size: 11px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3px;
+  grid-auto-rows: minmax(100px, auto);
+}
+button.borders{
+  background-color:  var( --white-details);
+  border: none;
+  box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 2px 15px 2px 15px; 
+  font-size: 8px;
+  margin: 0 3px 1px 1px ;
+ }
+
+button.back-btn{
+  background-color:  var( --white-details);
+  border: none;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 5px 20px 5px 20px; 
+  font-size: 9px;
+  margin: 0 3px 1px 1px ;
+ }
+
+ button.back-btn span{
+  padding-right: 5px;
+ }
+
+@media (max-width:375px) {
+  .cardsWrapper{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3px;
+    grid-auto-rows: minmax(100px, auto);
+    justify-items: center;
+  }
+  .detail{
+    flex-direction: column;
+  }
+}
+
+@media (max-width:600px) {
+  .detail{
+    margin: auto;
+  }
+
+.detail .detailData .details{
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3px;
+  grid-auto-rows: minmax(100px, auto);
+}
 }
