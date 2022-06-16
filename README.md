@@ -1,4 +1,5 @@
-#CAPTURES
+#CAPTURES 
+in ./captures
 
 # Getting Started with Create React App
 
