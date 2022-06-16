@@ -13,3 +13,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+:root {
+  --background: hsl(0, 0%, 98%);
+  --details: hsl(0, 0%, 100%);
+  --font-color: hsl(200, 15%, 8%);
+  --filter:hsl(0, 0%, 100%);
+  }
+ 

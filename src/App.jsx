@@ -7,7 +7,7 @@ import DetailCountry from "./Views/DetailCountry"
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App" >
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/detail" element={<DetailCountry />}></Route>

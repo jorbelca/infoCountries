@@ -1,27 +1,24 @@
-:root {
-  --white-background: hsl(0, 0%, 98%);
-  --white-details: hsl(0, 0%, 100%)
-  }
 
 input::placeholder  {    
       font-style: normal;
       font-size: 9px;
       font-weight: 100;
       color: rgb(171, 171, 171);
+      color: var(--font-color)
   }
 a {
    text-decoration: none; 
    color: black;
   }
 .App {
-
-  background-color: var(--white-background)
+  background-color: var( --background);
+  color: var(--font-color);
   }
 
 .bar{
   display: flex;
   align-items: flex-end;
-  background-color: var( --white-details);
+  background-color: var( --details);
   padding:20px;
   box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -41,8 +38,9 @@ margin-right: auto  ;
 .bar-button button{
   border: 0px;
   font-weight: 100;
-  background-color:  var( --white-details);
+  background-color:  var( --details);
   border-radius:5px;
+  color: var(--font-color);
 }
 .bar-button button i{
   padding-right: 5px;
@@ -51,6 +49,7 @@ margin-right: auto  ;
 .filter{
   margin:20px;
   display: flex;
+
 }
 .filter-country{
   padding:10px;
@@ -58,17 +57,20 @@ margin-right: auto  ;
   border:1px;
   width:300px;
   box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
+  background-color: var(--filter);
 }
 .filter-select {  
-margin-left: auto;
-box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
 }
 .filter-select select{
   font-size: 9px;
   padding:10px;
   border-radius:5px;
   border:1px;
-  width:150px
+  width:150px;
+  background-color: var(--filter);
+  color: var(--font-color)
 }
 .cardsWrapper{
   display: grid;
@@ -78,12 +80,12 @@ box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
   justify-items: center;
 }
 .cards{
-  background-color: var(--white-details);
+  background-color: var(--details);
   max-width:150px;
   margin: 30px;  
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.049);
   border-radius: 5px;
-}
+  }
 .flag img{
 max-height: 100px;
 object-fit: cover;
@@ -93,6 +95,7 @@ border-radius:  2px 2px 0 0;
   font-size: 10px;
   margin: 10px;
   padding-bottom: 10px;
+  color: var(--font-color);
 }
 .card .generalData .name{
   font-weight: 800;
@@ -106,7 +109,7 @@ border-radius:  2px 2px 0 0;
 
 .detail{
   margin-top: -19px;
-  background-color:var(--white-details);
+  background-color: var( --background);
   padding: 19px 10px 0px 30px  ;
   display: flex;
   flex-direction: column;
@@ -133,27 +136,30 @@ border-radius:  2px 2px 0 0;
   padding-top: 20px;
 }
 button.borders{
-  background-color:  var( --white-details);
+  background-color:  var( --details);
   border: none;
   box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   padding: 2px 15px 2px 15px; 
   font-size: 8px;
   margin: 0 3px 1px 1px ;
+  color: var(--font-color);
  }
 
 button.back-btn{
-  background-color:  var( --white-details);
+  background-color:  var( --details);
   border: none;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 5px 20px 5px 20px; 
   font-size: 9px;
   margin: 0 3px 1px 1px ;
+  color: var(--font-color);
  }
 
  button.back-btn span{
   padding-right: 5px;
+  
  }
 
 span.detail-info{
@@ -163,7 +169,7 @@ span.detail-info{
 a.back{
   margin-top: 0px;
   margin-right: 90px;
-}
+  }
 
 @media (max-width:600px) {
    
