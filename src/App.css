@@ -13,6 +13,7 @@ a {
 .App {
   background-color: var( --background);
   color: var(--font-color);
+  min-height: 100vh;
   }
 
 .bar{
@@ -58,7 +59,9 @@ margin-right: auto  ;
   width:300px;
   box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
   background-color: var(--filter);
+  color: var(--font-color)
 }
+
 .filter-select {  
   margin-left: auto;
   box-shadow: 1px 1px 3px 0.5px rgba(0, 0, 0, 0.1);
@@ -171,7 +174,7 @@ a.back{
   margin-right: 90px;
   }
 
-@media (max-width:600px) {
+@media (max-width:650px)  {
    
   .cardsWrapper{
     display: grid;
@@ -223,3 +226,16 @@ a.back{
   flex-direction: column;
 }
 }
+
+@media (max-width:850px) and (min-width: 650px) {
+   
+  .cardsWrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3px;
+    grid-auto-rows: minmax(100px, auto);
+    justify-items: center;
+  }
+  
+}
+

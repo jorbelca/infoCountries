@@ -5,6 +5,7 @@ import Cards from "../Components/Cards"
 const Home = () => {
   const [countries, setCountries] = useState([])
   const [search, setSearch] = useState("")
+  const [finalCountries, setFinalCountries] = useState([])
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => {
@@ -12,6 +13,7 @@ const Home = () => {
       })
       .then((data) => {
         setCountries(data)
+        setFinalCountries(data)
       })
   }, [])
 
@@ -22,7 +24,7 @@ const Home = () => {
     const matchedCountries = countries.filter((country) =>
       country.name.common.toLowerCase().includes(current_filter)
     )
-    setCountries(matchedCountries)
+    setFinalCountries(matchedCountries)
   }
   const newSelect = (event) => {
     event.preventDefault()
@@ -30,7 +32,7 @@ const Home = () => {
     const matchedCountries = countries.filter((country) =>
       country.region.includes(region)
     )
-    setCountries(matchedCountries)
+    setFinalCountries(matchedCountries)
   }
 
   return (
@@ -59,7 +61,7 @@ const Home = () => {
           </select>
         </div>
       </div>
-      <Cards countries={countries} />
+      <Cards countries={finalCountries} />
     </>
   )
 }
