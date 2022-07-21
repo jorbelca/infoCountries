@@ -225,6 +225,9 @@ a.back{
 
   flex-direction: column;
 }
+.flag-detail > img{
+  max-width: 250px;
+}
 }
 
 @media (max-width:850px) and (min-width: 650px) {
